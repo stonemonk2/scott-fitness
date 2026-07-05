@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scott Curtner — Field Notes</title>
+<meta name="description" content="Scott Curtner's personal field notes: fitness at the Millbrae Fitness Court and at home, a few disciplines worth keeping, and a short set of original maxims.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%234A5D34'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' font-weight='700' fill='%23EFE7D3' text-anchor='middle'%3ESC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EFE7D3;
+    --paper2:#E5DAC0;
+    --ink:#2B2E23;
+    --moss:#4A5D34;
+    --clay:#A8532E;
+    --ledger:#6B5A44;
+    --taupe:#C9BC9E;
+    --line:rgba(43,46,35,0.16);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Work Sans',sans-serif;
+    font-weight:400;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--clay);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+
+  .wrap{max-width:760px;margin:0 auto;padding:0 28px;}
+
+  nav{
+    position:sticky;top:0;z-index:10;
+    background:var(--paper);
+    border-bottom:1px solid var(--line);
+    padding:18px 28px;
+    display:flex;justify-content:space-between;align-items:center;
+  }
+  .nav-mark{
+    font-family:'Fraunces',serif;font-weight:700;font-size:19px;color:var(--ink);
+  }
+  .nav-mark span{color:var(--moss);}
+  .nav-links{display:flex;gap:22px;list-style:none;}
+  .nav-links a{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;
+    text-transform:uppercase;color:var(--ledger);
+  }
+  .nav-links a:hover{color:var(--clay);text-decoration:none;}
+
+  .hero{padding:64px 0 40px;}
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;
+    text-transform:uppercase;color:var(--clay);margin-bottom:18px;
+  }
+  h1{
+    font-family:'Fraunces',serif;font-weight:700;
+    font-size:clamp(34px,6vw,52px);line-height:1.08;color:var(--ink);
+    margin-bottom:22px;
+  }
+  h1 em{font-style:italic;font-weight:500;color:var(--moss);}
+  .hero-sub{font-size:17px;color:#4a4d3f;max-width:520px;}
+
+  section{padding:52px 0;border-top:1px solid var(--line);}
+  .section-head{margin-bottom:28px;}
+  .section-eyebrow{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;
+    text-transform:uppercase;color:var(--ledger);margin-bottom:10px;
+  }
+  h2{
+    font-family:'Fraunces',serif;font-weight:600;font-size:28px;color:var(--ink);
+  }
+  h3{
+    font-family:'Fraunces',serif;font-weight:600;font-size:18px;color:var(--moss);
+    margin:34px 0 12px;
+  }
+  h3:first-of-type{margin-top:20px;}
+  .lede{color:#4a4d3f;font-size:16px;max-width:560px;margin-top:10px;}
+
+  .tally-row{
+    display:flex;gap:14px;flex-wrap:wrap;margin:26px 0;
+  }
+  .tally{
+    background:var(--paper2);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:14px 18px;
+    min-width:108px;
+  }
+  .tally-num{
+    font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:26px;color:var(--moss);
+    line-height:1;
+  }
+  .tally-num.clay{color:var(--clay);}
+  .tally-label{
+    font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;
+    text-transform:uppercase;color:var(--ledger);margin-top:6px;
+  }
+
+  .ledger{margin:24px 0;}
+  .ledger-row{
+    display:grid;grid-template-columns:1fr auto;gap:16px;
+    padding:13px 0;border-bottom:1px solid var(--line);
+    font-size:15px;
+  }
+  .ledger-row:first-child{border-top:1px solid var(--line);}
+  .ledger-name{color:var(--ink);}
+  .ledger-note{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ledger);
+    text-align:right;white-space:nowrap;
+  }
+
+  .field-note{
+    background:var(--paper2);
+    border-left:3px solid var(--moss);
+    padding:16px 20px;margin:24px 0;font-size:14.5px;color:#3d4034;
+  }
+  .field-note .fn-date{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ledger);
+    letter-spacing:0.04em;margin-bottom:6px;display:block;
+  }
+
+  blockquote{
+    font-family:'Fraunces',serif;font-style:italic;font-weight:500;
+    font-size:21px;line-height:1.5;color:var(--moss);
+    border-left:3px solid var(--clay);padding-left:22px;margin:28px 0;
+  }
+  blockquote cite{
+    display:block;font-family:'IBM Plex Mono',monospace;font-style:normal;
+    font-size:11px;letter-spacing:0.06em;text-transform:uppercase;
+    color:var(--ledger);margin-top:10px;
+  }
+
+  p{color:#3d4034;font-size:15.5px;margin-bottom:14px;}
+  p:last-child{margin-bottom:0;}
+
+  .tag{
+    display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:10.5px;
+    letter-spacing:0.06em;text-transform:uppercase;color:var(--ledger);
+    border:1px solid var(--line);border-radius:100px;padding:3px 11px;
+    margin-right:8px;margin-top:14px;
+  }
+
+  .mission{
+    padding:64px 0;text-align:center;border-top:1px solid var(--line);
+  }
+  .mission blockquote{
+    border-left:none;padding-left:0;margin:0 auto;max-width:560px;
+    font-size:20px;color:var(--ink);
+  }
+
+  .moonie{
+    text-align:center;padding:0 0 48px;
+    font-family:'Fraunces',serif;font-style:italic;font-size:17px;color:var(--clay);
+  }
+  .moonie a{color:var(--clay);font-family:'IBM Plex Mono',monospace;font-size:11px;
+    font-style:normal;display:block;margin-top:6px;letter-spacing:0.04em;}
+
+  footer{
+    border-top:1px solid var(--line);padding:32px 0 48px;
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;
+  }
+  .footer-note{font-size:13px;color:var(--ledger);}
+  .footer-links{display:flex;gap:18px;}
+  .footer-links a{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;
+    text-transform:uppercase;color:var(--ledger);
+  }
+  .footer-links a:hover{color:var(--clay);}
+
+  @media (max-width:600px){
+    nav{padding:16px 20px;}
+    .nav-links{gap:14px;}
+    .wrap{padding:0 20px;}
+    .ledger-row{grid-template-columns:1fr;gap:4px;}
+    .ledger-note{text-align:left;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-mark">Scott <span>Curtner</span></div>
+  <ul class="nav-links">
+    <li><a href="#fitness">Fitness</a></li>
+    <li><a href="#philosophy">Philosophy</a></li>
+    <li><a href="#sayings">Sayings</a></li>
+  </ul>
+</nav>
+
+<div class="wrap">
+
+  <div class="hero">
+    <p class="eyebrow">San Bruno, CA — logged daily</p>
+    <h1>Every rep counted.<br>Every discipline <em>logged.</em></h1>
+    <p class="hero-sub">Field notes on fitness, a few disciplines worth keeping, and a short set of maxims I've worked out for myself along the way. This is the personal side of things — for the technology audit work, see <a href="https://www.scottcurtner.com">scottcurtner.com</a>.</p>
+  </div>
+
+  <section id="fitness">
+    <div class="section-head">
+      <p class="section-eyebrow">Field notes — fitness &amp; health</p>
+      <h2>Fitness &amp; Health</h2>
+      <p class="lede">Some days it's the fitness court. Some days it's the garage, or the trampoline out back. The circuit changes, the discipline doesn't.</p>
+    </div>
+
+    <p>You don't need a gym membership to stay in shape. Pushups, squats, lunges, jumping, running in place, or picking up whatever's heavy and pressing it overhead — the basics are always there. Start small, stay consistent, and get creative when it stops being enough.</p>
+
+    <h3>Outdoor: Millbrae Fitness Court</h3>
+    <p>No membership, no roof, no excuse. Most sessions start with a bike ride over and end with a circuit built entirely around bodyweight and a set of steel rings.</p>
+
+    <div class="ledger">
+      <div class="ledger-row"><span class="ledger-name">Ring push-ups — slow, tight, tucked</span><span class="ledger-note">controlled</span></div>
+      <div class="ledger-row"><span class="ledger-name">Leg lifts to toe-touch, hollow-body descent</span><span class="ledger-note">goal: 5</span></div>
+      <div class="ledger-row"><span class="ledger-name">Dip planks — straight &amp; bent-leg</span><span class="ledger-note">circuit</span></div>
+      <div class="ledger-row"><span class="ledger-name">Raised-bench sit-ups, feet never touch down</span><span class="ledger-note">varied</span></div>
+      <div class="ledger-row"><span class="ledger-name">Ground push-ups — slow tempo</span><span class="ledger-note">circuit</span></div>
+      <div class="ledger-row"><span class="ledger-name">Diagonal lower back extensions, L / C / R</span><span class="ledger-note">goal: 30</span></div>
+    </div>
+
+    <div class="tally-row">
+      <div class="tally"><div class="tally-num">30</div><div class="tally-label">Goal reps</div></div>
+      <div class="tally"><div class="tally-num clay">15</div><div class="tally-label">Off-day target</div></div>
+      <div class="tally"><div class="tally-num">10×3</div><div class="tally-label">Set structure</div></div>
+    </div>
+
+    <div class="field-note">
+      <span class="fn-date">April 17, 2026</span>
+      Off day. Dialed the back extensions back to 15 instead of the usual 30 — still counts if the bike ride there and back is part of the session.
+    </div>
+
+    <h3>Home: The Garage and the Trampoline</h3>
+    <p>The garage tells the rest of the story — free weights, a pull-up and dip station, a bench, a stationary bike and treadmill for the days the weather wins, resistance bands for finishing burns, a Bosu ball for the stuff that wrecks your balance on purpose, and a Wave Master bag for whatever's left over.</p>
+
+    <p>Then there's the trampoline. I started learning gymnastics my sophomore year of high school, purely because a friend and I wanted to learn backflips to impress people at parties. Neither of us ever became real gymnasts, but we got each other to the backflip, and that was the whole goal. These days the trampoline covers both ends of it — flips and twists when I'm feeling ambitious, or just lying down for floor work like sit-ups and handstand practice when I'm not. Still land a clean back flip, front flip, or back layout into a pool whenever one's around, or off a rare diving board. Fifty-five and still landing them clean is its own quiet win.</p>
+
+    <h3>Diet &amp; a Little Biohacking</h3>
+    <p>Nothing exotic, mostly the same discipline applied to eating that gets applied everywhere else. Getting curious about the biohacking side too — sleep tracking, occasional fasting, keeping an eye on blood glucose and ketones. Early days on writing about the specifics; the philosophy comes first, the numbers might show up here later.</p>
+
+    <blockquote>
+      Stand up straight, pull your shoulders back slightly, and use the suck-in-your-gut muscle.
+      <cite>— an old habit, still true</cite>
+    </blockquote>
+    <p>Decades-old advice, still the cheapest posture fix there is. Combine it with everything else and it actually works.</p>
+  </section>
+
+  <section id="philosophy">
+    <div class="section-head">
+      <p class="section-eyebrow">Disciplines, not errors</p>
+      <h2>A few simple disciplines, practiced every day</h2>
+    </div>
+    <p>The formula for failure is a few errors in judgment, repeated every day. The formula for success is a few simple disciplines, practiced every day. Neither one announces itself — you don't feel the difference after one day. You feel it after a few years.</p>
+    <p>Where should you start? Wherever you are. Go for the apple instead of the candy bar today, and the process has already begun. Everybody has it in them to become capable, healthy, and steady — the philosophy comes first, the discipline follows.</p>
+    <span class="tag">inspired by Jim Rohn</span>
+    <span class="tag">more of these coming</span>
+  </section>
+
+  <section id="sayings">
+    <div class="section-head">
+      <p class="section-eyebrow">In my own words</p>
+      <h2>A few lines worth keeping</h2>
+      <p class="lede">Not borrowed this time. A short, growing set of maxims I've worked out for myself over the years.</p>
+    </div>
+
+    <div class="ledger">
+      <div class="ledger-row"><span class="ledger-name">Be the person you want to be, 100%. Anything less is what you don't want.</span><span class="ledger-note">01</span></div>
+      <div class="ledger-row"><span class="ledger-name">Better than having a nice car is being the guy who can have a nice car if he wants it.</span><span class="ledger-note">02</span></div>
+      <div class="ledger-row"><span class="ledger-name">If you don't have something you want, you probably haven't wanted it bad enough for long enough.</span><span class="ledger-note">03</span></div>
+    </div>
+
+    <span class="tag">originals</span>
+    <span class="tag">more of these coming</span>
+  </section>
+
+  <div class="mission">
+    <p class="section-eyebrow">Mission</p>
+    <blockquote>
+      To persist in the achievement of self-mastery through effective time management, and the use of resources that contribute toward the continuous growth of intellect, spirit, and health — honest to everyone, respectful, patient, and kind, while giving unconditional love and support to family and the people who matter.
+    </blockquote>
+  </div>
+
+  <div class="moonie">
+    "You are the very best one!"
+    <a href="https://themoonieshow.com/about" target="_blank">— MooNiE</a>
+  </div>
+
+  <footer>
+    <div class="footer-note">Long-time board member, San Bruno Education Foundation.</div>
+    <div class="footer-links">
+      <a href="https://www.scottcurtner.com">scottcurtner.com →</a>
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>
